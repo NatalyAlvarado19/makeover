@@ -1,0 +1,85 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+body{
+	font-family: 'Cabin Sketch';
+	font-size: 1.2rem;
+	min-height: 100%;
+}
+.grid-container {
+	min-height: 100%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-rows: 
+		auto
+		auto
+		10rem
+		auto
+		auto;
+	grid-template-areas:  
+		"H" 
+		"N" 
+		"S"
+		"A" 
+		"F";
+}
+
+.grid-container> * {
+	box-shadow: -1% 1px 7px 0px rgba(0,0,0,0.75);
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+
+header {
+	grid-area:H;
+	background-color:#98C381;
+}
+
+nav {
+	grid-area:N;
+	background-color: #C3C381;
+}
+
+section {
+	grid-area:S;
+	background-color: #81BEC3;
+}
+
+aside {
+	grid-area:A;
+	background-color: #81C39A;
+}
+
+footer {
+	grid-area:F;
+	background-color: #A081C3;
+}
+
+@media (min-width: 640px) {
+	.grid-container {
+		grid-template:
+		"H H" 3rem
+		"N N" 2rem
+		"S A" auto
+		"F F" 3rem /
+		65% 35%;
+	}
+}
+
+@media (min-width: 768px) {
+	.grid-container {
+		grid-template:
+		"H H H " 4rem
+		"N S A"  auto
+		"F F F" 3rem/
+		15% 55% 30%;
+
+	}
+}
+
