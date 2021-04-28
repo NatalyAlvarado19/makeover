@@ -1,0 +1,147 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	height: 100%;
+}
+body{
+	font-family: 'Advent Pro';
+	font-size: 1.2rem;
+	min-height: 100%;
+}
+.grid-container {
+	min-height: 100%;
+	display: grid;
+	grid-gap: 10px;
+	grid-template-rows: 
+		auto
+		auto
+		15rem
+		auto
+		auto;
+	grid-template-areas:  
+		"H" 
+		"N" 
+		"S"
+		"A" 
+		"F";
+}
+
+.grid-container> * {
+	box-shadow: -1% 1px 7px 0px rgba(0,0,0,0.75);
+	border-radius: 4px;
+	padding: 10px;
+	text-align: center;
+}
+
+.grid-nav-ul{
+	display: grid;
+	grid-template-columns: repeat(5, auto);
+}
+
+.grid-main{
+	display: grid;
+	grid-template-columns: auto auto;
+	grid-template-rows: auto auto;
+}
+
+.grid-main h1{
+	grid-column: 1/4;
+}
+
+header {
+	grid-area:H;
+	background-color:#98C381;
+}
+
+li {
+    float: center;
+    margin: 1px 35px;
+    text-align: center;
+    background-color: blue; 
+    display: inline-block;
+    color: white;
+    background-color: #009492;
+    border: 2px solid blue;
+    border-radius: 10px 10px; 
+    }
+
+a { 
+    text-decoration: none;
+    display: inline-block;
+    color: white;
+    width: 110px;
+    color: white;
+  }
+
+nav {
+	grid-area:N;
+	background-color: #C3C381;
+}
+
+section {
+	grid-area:S;
+	background-color: #81BEC3;
+}
+
+aside {
+	grid-area:A;
+	background-color: #81C39A;
+}
+
+footer {
+	grid-area:F;
+	background-color: #A081C3;
+}
+
+@media (min-width: 640px) {
+	.grid-container {
+		grid-template:
+		"H H" auto
+		"N N" auto
+		"S A" auto
+		"F F" auto /
+		65% 35%;
+	}
+	.grid-main {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+	}
+	.grid-main h1{
+		grid-column: 1/3;
+	}
+}
+
+@media (min-width: 768px) {
+	.grid-container {
+		grid-template:
+		"H H H " auto
+		"N S A"  auto
+		"F F F"  auto/
+		15% 55% 30%;
+
+	}
+	.grid-nav-ul {
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: repeat(5,1fr);
+	}
+	.grid-main {
+		display: grid;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+	}
+	.grid-main h1{
+		grid-column: 1/3;
+	}
+}
+	a {
+		text
+	}
+
+img {
+	width: 25rem;
+}
